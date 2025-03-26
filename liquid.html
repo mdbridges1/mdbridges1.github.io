@@ -9,18 +9,67 @@
 {% assign cta_course_id           = "2490392" %}
 {% assign cta_product_id          = "5839278" %}
 {% assign cta_checkout_url        = "https://www.canopy.games/purchase" %}
+
+{% assign hero_heading            = course_title %}
+{% assign hero_subheading         = course_tagline %}
+
 {% assign about_title             = "About This Course" %}
+{% assign course_image_url        = "https://bunny-wp-pullzone-gpbu1g4x6g.b-cdn.net/wp-content/uploads/2025/03/Course-Image-No-CC.png" %}
+
 {% assign about_text              = "In this course, you'll build a complete Breakout-style game using Godot 4. We guide you step-by-step from blank scene to polished gameplay." %}
 {% assign about_text_2            = "You'll gain confidence with scenes, signals, collisions, input, UI, and more—perfect for beginners or those new to Godot." %}
 {% assign about_image_on_left     = false %}
+
+{% assign overview_heading        = "Design and Code “Spooky Bricks” from Scratch" %}
+{% assign overview_para_1         = "Spooky Bricks is a complete, step-by-step course where you’ll build a fully playable and polished Breakout-style game using the Godot 4 game engine. Whether you're new to Godot or game development in general, this course will walk you through the entire process—from setting up your first scene to implementing complex powerups and designing a cohesive UI." %}
+{% assign overview_para_2         = "This is a hands-on course. You’ll build as you learn, applying each new concept immediately to your own version of the game. Every lesson is practical, beginner-friendly, and designed to leave you with not just knowledge—but a finished game." %}
+
+{% assign learn_heading           = "What You’ll Learn" %}
+{% assign course_image_url        = "https://bunny-wp-pullzone-gpbu1g4x6g.b-cdn.net/wp-content/uploads/2025/03/Course-Image-No-CC.png" %}
+
+{% assign requirements_heading    = "Requirements" %}
+{% assign who_heading             = "Who This Course is For" %}
+
+{% assign modules_heading         = "What’s Inside the Course" %}
+{% assign course_image_url        = "https://bunny-wp-pullzone-gpbu1g4x6g.b-cdn.net/wp-content/uploads/2025/03/Course-Image-No-CC.png" %}
+
+{% assign bonuses_heading         = "What You Get" %}
+{% assign course_image_url        = "https://bunny-wp-pullzone-gpbu1g4x6g.b-cdn.net/wp-content/uploads/2025/03/Course-Image-No-CC.png" %}
+
+{% assign instructor_heading      = "Meet Your Instructor" %}
+{% assign instructor_image_url    = "https://blog.canopy.games/wp-content/uploads/2024/10/Mikey_R_2024-scaled.jpg" %}
+
+{% assign testimonial_heading     = "What People Are Saying" %}
+{% assign faq_heading             = "Frequently Asked Questions" %}
+{% assign final_cta_heading       = "Ready to Start Building?" %}
+
 {% assign instructor_name         = "Michael Bridges" %}
 {% assign instructor_bio          = "Michael is a 3D generalist and educator with over a decade of experience using Blender and game engines like Godot. He's passionate about helping people build games and learn technical skills with confidence." %}
+
 {% assign testimonial_quote       = "This course gave me the confidence to start making my own games. Super clear and easy to follow!" %}
 {% assign testimonial_author      = "Jane Doe, Aspiring Developer" %}
+
 {% assign faq_1_q                 = "Do I need to know Godot to start this course?" %}
 {% assign faq_1_a                 = "Nope! This course is beginner-friendly. We'll walk you through everything step-by-step." %}
 {% assign faq_2_q                 = "How long is the course?" %}
-{% assign faq_2_a                 = "It's around 5 hours of video content, plus practice and project time." %}            = "It's around 5 hours of video content, plus practice and project time." %}
+{% assign faq_2_a                 = "It's around 5 hours of video content, plus practice and project time." %}
+
+{% capture what_youll_learn_content %}
+
+
+  <h2>{{ learn_heading }}</h2>
+  <ul>
+    <li>Build a fully functional Breakout-style game using Godot 4</li>
+    <li>Use Tilemaps to create reusable, flexible level layouts</li>
+    <li>Create dynamic interactions using PhysicsBodies</li>
+    <li>Design and implement modular powerups and game logic</li>
+    <li>Track player lives, level progression, win/loss conditions</li>
+    <li>Add polish with particles, sound, music, and theming</li>
+    <li>Build custom UI components like menus, sliders, and screens</li>
+    <li>Use tools like a palette plugin to streamline your visuals</li>
+    <li>Troubleshoot bugs and refine your game for a pro finish</li>
+  </ul>
+{% endcapture %}
 
 <style>
   body {
@@ -49,13 +98,13 @@
   .section {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 1rem 2rem;
   }
 
   .flex {
     display: flex;
-    gap: 2rem;
-    align-items: center;
+    gap: 0rem;
+    align-items: flex-start; 
     justify-content: center;
     flex-wrap: wrap;
   }
@@ -93,6 +142,24 @@
     h2 { font-size: 1.75rem; }
     p  { font-size: 1rem; }
   }
+
+
+  .padded-box {
+  padding: 1rem;
+}
+
+
+.flex-child {
+  flex: 1 1 400px;
+  padding: 1rem;
+}
+
+
+.flex-child h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
 
   .hero-video-section {
     position: relative;
@@ -160,55 +227,33 @@
 </div>
 
 <!-- ABOUT -->
-<div class="section flex {% if about_image_on_left %}stack-on-mobile{% endif %}" style="flex-direction: {% if about_image_on_left %}row-reverse{% else %}row{% endif %};">
-  <div style="flex: 1 1 400px;">
+<div class="flex stack-on-mobile">
+  <div class="flex-child">
     <img src="{{ course_image_url }}" alt="{{ about_image_alt }}" class="image-rounded">
   </div>
-  <div style="flex: 1 1 400px;">
+  <div class="flex-child">
     <h2>{{ about_title }}</h2>
     <p>{{ about_text }}</p>
     <p>{{ about_text_2 }}</p>
   </div>
 </div>
 
-<!-- INSTRUCTOR -->
-<div class="section flex stack-on-mobile">
-  <div style="flex: 1 1 400px;">
-    <img src="{{ course_image_url }}" alt="Instructor Photo" class="image-rounded">
-  </div>
-  <div style="flex: 1 1 400px;">
-    <h2>Meet Your Instructor</h2>
-    <h3>{{ instructor_name }}</h3>
-    <p>{{ instructor_bio }}</p>
-  </div>
-</div>
 
 <!-- TESTIMONIAL -->
 <div class="section">
-  <h2>What People Are Saying</h2>
-  <div class="flex stack-on-mobile">
-    <div style="flex: 1 1 400px;">
+  <div class="flex stack-on-mobile" style="align-items: flex-start;">
+    <div class="flex-child">
+      <h2>What People Are Saying</h2>
       <blockquote>“{{ testimonial_quote }}”</blockquote>
       <p><strong>{{ testimonial_author }}</strong></p>
     </div>
-    <div style="flex: 1 1 400px;">
+    <div class="flex-child">
       <img src="{{ course_image_url }}" alt="Happy student" class="image-rounded">
     </div>
   </div>
 </div>
 
-<!-- FAQ -->
-<div class="section">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-item">
-    <h3>{{ faq_1_q }}</h3>
-    <p>{{ faq_1_a }}</p>
-  </div>
-  <div class="faq-item">
-    <h3>{{ faq_2_q }}</h3>
-    <p>{{ faq_2_a }}</p>
-  </div>
-</div>
+
 
 <!-- REPEATED CTA -->
 <div class="section" style="text-align: center;">
@@ -228,31 +273,21 @@
   <p>This is a hands-on course. You’ll build as you learn, applying each new concept immediately to your own version of the game. Every lesson is practical, beginner-friendly, and designed to leave you with not just knowledge—but a finished game.</p>
 </div>
 
+
 <!-- WHAT YOU'LL LEARN -->
 <div class="section flex stack-on-mobile">
-  <div style="flex: 1 1 400px;">
+  <div class="flex-child">
     <img src="{{ course_image_url }}" alt="Learning outcomes" class="image-rounded">
   </div>
-  <div style="flex: 1 1 400px;">
-    <h2>What You’ll Learn</h2>
-    <ul>
-      <li>Build a fully functional Breakout-style game using Godot 4</li>
-      <li>Use Tilemaps to create reusable, flexible level layouts</li>
-      <li>Create dynamic interactions using PhysicsBodies</li>
-      <li>Design and implement modular powerups and game logic</li>
-      <li>Track player lives, level progression, win/loss conditions</li>
-      <li>Add polish with particles, sound, music, and theming</li>
-      <li>Build custom UI components like menus, sliders, and screens</li>
-      <li>Use tools like a palette plugin to streamline your visuals</li>
-      <li>Troubleshoot bugs and refine your game for a pro finish</li>
-    </ul>
+  <div class="flex-child">
+    {{ what_youll_learn_content }}
   </div>
 </div>
 
 
 <!-- REQUIREMENTS & WHO IT'S FOR -->
 <div class="section flex stack-on-mobile">
-  <div style="flex: 1 1 400px;">
+  <div class="flex-child">
     <h2>Requirements</h2>
     <ul>
       <li>No prior Godot or coding experience needed</li>
@@ -261,7 +296,7 @@
       <li>Optional: Basic comfort using software interfaces</li>
     </ul>
   </div>
-  <div style="flex: 1 1 400px;">
+  <div class="flex-child">
     <h2>Who This Course is For</h2>
     <ul>
       <li>New game devs looking for a structured project</li>
@@ -274,10 +309,10 @@
 
 <!-- COURSE MODULES / BREAKDOWN -->
 <div class="section flex stack-on-mobile">
-  <div style="flex: 1 1 400px;">
+  <div class="flex-child">
     <img src="{{ course_image_url }}" alt="Course structure visual" class="image-rounded">
   </div>
-  <div style="flex: 1 1 400px;">
+  <div class="flex-child">
     <h2>What’s Inside the Course</h2>
     <ul>
       <li>🎮 Start from scratch: Set up your Godot project and first scene</li>
@@ -291,10 +326,7 @@
 
 <!-- BONUSES / WHAT YOU GET -->
 <div class="section flex stack-on-mobile">
-  <div style="flex: 1 1 400px;">
-    <img src="{{ course_image_url }}" alt="Bonus content" class="image-rounded">
-  </div>
-  <div style="flex: 1 1 400px;">
+  <div class="flex-child">
     <h2>What You Get</h2>
     <ul>
       <li>Lifetime access to all video lessons</li>
@@ -302,5 +334,35 @@
       <li>Access to our community site and Discord server</li>
       <li>Free updates as the course evolves</li>
     </ul>
+  </div>
+  <div class="flex-child">
+    <img src="{{ course_image_url }}" alt="Bonus content" class="image-rounded">
+  </div>
+</div>
+
+
+<!-- INSTRUCTOR -->
+<div class="section flex stack-on-mobile">
+  <div class="flex-child">
+    <img src="{{ instructor_image_url }}" alt="Instructor Photo" class="image-rounded">
+  </div>
+  <div class="flex-child">
+    <h2>Meet Your Instructor</h2>
+    <h3>{{ instructor }}</h3>
+    <p>{{ instructor_bio }}</p>
+  </div>
+</div>
+
+
+<!-- FAQ -->
+<div class="section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <h3>{{ faq_1_q }}</h3>
+    <p>{{ faq_1_a }}</p>
+  </div>
+  <div class="faq-item">
+    <h3>{{ faq_2_q }}</h3>
+    <p>{{ faq_2_a }}</p>
   </div>
 </div>
