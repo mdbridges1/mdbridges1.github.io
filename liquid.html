@@ -1,0 +1,118 @@
+{% comment %} ─── CONFIGURATION ─────────────────────────────────────────── {% endcomment %}
+{% assign course_title         = "Spooky Bricks" %}
+{% assign course_tagline       = "Learn Godot 4 by building a complete Breakout-style game from scratch." %}
+{% assign course_video_url     = "https://blog.canopy.games/wp-content/uploads/2025/03/Spooky-Bricks-Itchio-Video-1280x720-H.264_x264.mp4" %}
+{% assign course_image_url     = "https://blog.canopy.games/wp-content/uploads/2025/03/spooky-bricks-cover.jpg" %}
+{% assign course_image_alt     = "Spooky Bricks game preview" %}
+{% assign cta_text             = "Get the Course ↓" %}
+{% assign cta_course_id        = "2490392" %}
+{% assign cta_product_id       = "5839278" %}
+{% assign cta_checkout_url     = "https://www.canopy.games/purchase" %}
+{% assign font_family          = "sans-serif" %}
+
+<style>
+  .hero-video-section {
+    position: relative;
+    height: 50vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    font-family: {{ font_family }};
+    padding: 0 5%;
+  }
+
+  .hero-video-section video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -2;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+  }
+
+  .hero-overlay-darken {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+  }
+
+  .hero-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .hero-content h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .hero-content p {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-button {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 12px 24px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    cursor: pointer;
+  }
+
+  .hero-button:hover {
+    background: white;
+    color: black;
+  }
+
+  @media screen and (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2.25rem;
+    }
+    .hero-content p {
+      font-size: 1rem;
+    }
+    .hero-video-section {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+</style>
+
+<div class="hero-video-section">
+  <video autoplay muted loop playsinline>
+    <source src="{{ course_video_url }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="hero-overlay-darken"></div>
+
+  <div class="hero-content">
+    <h1>{{ course_title }}</h1>
+    <p>{{ course_tagline }}</p>
+
+    <form action="{{ cta_checkout_url }}" method="get" style="margin-top: 1rem;">
+      <input type="hidden" name="product_id" value="{{ cta_product_id }}">
+      <input type="hidden" name="course_id" value="{{ cta_course_id }}">
+      <button type="submit" class="hero-button">{{ cta_text }}</button>
+    </form>
+
+    <img src="{{ course_image_url }}" alt="{{ course_image_alt }}" style="margin-top: 2rem; max-width: 100%; border-radius: 8px;">
+  </div>
+</div>
