@@ -119,28 +119,31 @@
 {% endcapture %}
 
 {% capture what_youll_learn_section %}
-<div class="section flex-child">
-  <img src="{{ course_image_url }}" alt="Learning outcomes" class="image-rounded">
+<div class="section">
   <h2>{{ learn_heading }}</h2>
-  <div class="flex-child">
-    <ul>
-      <li>{{learning_1}}</li>
-      <li>{{learning_2}}</li>
-      <li>{{learning_3}}</li>
-      <li>{{learning_4}}</li>
-      <li>{{learning_5}}</li>
-    </ul>
+  <img src="{{ course_image_url }}" alt="Learning outcomes" class="image-rounded">
+  <div class="flex">
+
+      <div class="flex-child">
+        <ul>
+          <li>{{learning_1}}</li>
+          <li>{{learning_2}}</li>
+          <li>{{learning_3}}</li>
+          <li>{{learning_4}}</li>
+          <li>{{learning_5}}</li>
+        </ul>
+      </div>
+      <div class="flex-child">
+        <ul>
+          <li>{{learning_6}}</li>
+          <li>{{learning_7}}</li>
+          <li>{{learning_8}}</li>
+          <li>{{learning_9}}</li>
+          <li>{{learning_10}}</li>
+        </ul>
+      </div>
   </div>
-  <div class="flex-child">
-    {{ what_youll_learn_content }}
-     <ul>
-      <li>{{learning_6}}</li>
-      <li>{{learning_7}}</li>
-      <li>{{learning_8}}</li>
-      <li>{{learning_9}}</li>
-      <li>{{learning_10}}</li>
-    </ul>
-  </div>
+  
 </div>
 {% endcapture %}
 
@@ -170,24 +173,26 @@
 {% endcapture %}
 
 {% capture course_breakdown_section %}
-<div class="section flex">
+<div class="section">
   <img src="{{ course_image_url }}" alt="Course structure visual" class="image-rounded">
   <h2> {{ modules_heading }}</h2>
-  <div class="flex-child">
-    <ul>
-      <li>{{modules_1}}</li>
-      <li>{{modules_2}}</li>
-      <li>{{modules_3}}</li>
-      <li>{{modules_4}}</li>
-    </ul>
-  </div>
-  <div class="flex-child">
-    <ul>
-      <li>{{modules_5}}</li>
-      <li>{{modules_6}}</li>
-      <li>{{modules_7}}</li>
-      <li>{{modules_8}}</li>
-    </ul>
+  <div class="flex">
+    <div class="flex-child">
+      <ul>
+        <li>{{modules_1}}</li>
+        <li>{{modules_2}}</li>
+        <li>{{modules_3}}</li>
+        <li>{{modules_4}}</li>
+      </ul>
+    </div>
+    <div class="flex-child">
+      <ul>
+        <li>{{modules_5}}</li>
+        <li>{{modules_6}}</li>
+        <li>{{modules_7}}</li>
+        <li>{{modules_8}}</li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -311,7 +316,7 @@
 <style>
   body, .section, .section * {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: fff;
+    /* color: #fff; */
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -360,6 +365,17 @@ body.dark-mode .custom-divider {
     margin-bottom: 1rem;
   }
 
+  h2 {
+  text-align: center;
+}
+
+  img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
   .section h3 {
     font-size: 3.2rem;
     line-height: 4.8rem;
@@ -394,15 +410,17 @@ body.dark-mode .custom-divider {
   }
 
   .image-rounded {
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    display: block;
+    margin: 0 auto;
     max-width: 100%;
-  }
+    height: auto;
+    border-radius: 2rem;
+}
 
   .button-outline-light {
     display: inline-block;
-    background: transparent;
-    border: 2px solid white;
+    background: #365179;
+    border: #365179;
     color: white;
     padding: 12px 24px;
     font-weight: 600;
@@ -410,13 +428,14 @@ body.dark-mode .custom-divider {
     text-decoration: none;
     transition: 0.3s ease;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-transform: none;
+    border-radius: 1.5rem;
   }
 
   .button-outline-light:hover {
-    background: white;
-    color: black;
+    background: #5b89ce;
+    color: white;
   }
 
   @media screen and (max-width: 768px) {
